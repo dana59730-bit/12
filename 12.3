@@ -1,0 +1,22 @@
+internal class ObjectCounter
+{
+    private static int count;
+    public static int Count
+    {
+        get {return count;}
+        set {count = value;}
+    }
+    public ObjectCounter() { count++; }
+    public static void On()
+    {
+        Console.WriteLine($"Кол во созданных элементов {count}");
+    }
+
+}
+ class Program
+ {
+     static void Main(string[] args)
+     {
+         ObjectCounter.On();
+     }
+ }
