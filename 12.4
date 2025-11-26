@@ -1,0 +1,31 @@
+internal class Book
+ {
+     private readonly int ISBN;
+     private string nameBook, author;
+     public Book(int iSBN, string nameBook, string author)
+     {
+         ISBN = iSBN;
+         this.nameBook = nameBook;
+         this.author = author;
+     }
+     public string NameBook
+     {
+         get { return nameBook; } set { nameBook = value; }
+     }
+     public string Author
+     {
+         get { return author; } set { author = value; }
+     }
+     public void Info()
+     {
+         Console.WriteLine($"Номер книги: {ISBN}, название: {NameBook}, автор: {author}");
+     }
+ }
+ class Program
+{
+    static void Main(string[] args)
+    {
+        Book book = new Book(2, "Война и мир", "Л.Н. Толстой");
+        book.Info();
+    }
+}
