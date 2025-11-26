@@ -1,0 +1,16 @@
+internal class ProgramConfing
+{
+    private const string name = "Герман";
+    private const double version = 1.1;
+    public static void On()
+    {
+        Console.WriteLine($"Имя разработчика {name}, версия прграммы: {version}");
+    }
+}
+ class Program
+ {
+     static void Main(string[] args)
+     {
+         ProgramConfing.On();
+     }
+ }
