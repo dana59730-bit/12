@@ -1,0 +1,59 @@
+ public class Animal
+ {
+     public string name;
+     public string Name
+     {
+         get { return name; }
+         set { name = value; }
+     }
+     public Animal(string name)
+     {
+         Name = name;
+     }
+     public void Speak()
+     {
+         Console.WriteLine($"{name}, издает звук");
+     }
+ }
+ public class Cat : Animal
+ {
+     public int lives;
+     public int Lives
+     {
+         get { return lives; }
+         set
+         {
+             if (value < 0 || value > 9)
+             {
+                 Console.WriteLine("Ошибка");
+                 return;
+             }
+             lives = value;
+         }
+     }
+     public Cat(string name, int lives) : base(name) 
+     {
+         Lives = lives;
+     }
+     public Cat(string name): this(name, 9) { }
+     public void Meow()
+     {
+         int result = Lives - 1;
+         Console.WriteLine($"{Name} мяукнул, осталось жизней: {result}");
+     }
+ }
+ class Program
+{
+    static void Main(string[] args)
+    {
+        Animal animal1 = new Animal("Марфа");
+        Animal animal2 = new Animal("Умка");
+        Cat cat1 = new Cat("Марфа", 8);
+        Cat cat2 = new Cat("Умка");
+
+        animal1.Speak();
+        cat1.Meow();
+        animal2.Speak();
+        cat2.Meow();
+    }
+}
